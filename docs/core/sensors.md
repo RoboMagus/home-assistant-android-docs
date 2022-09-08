@@ -93,6 +93,7 @@ You can change the frequency of sensor updates by navigating to Companion App in
 | `binary_sensor.power_save` | None | Whether or not the device is in power saving mode. |
 | [Activity Sensors](#activity-sensors) | See Below | The current activity type, sleep confidence and sleep segment as computed by Google. Requires activity recognition permissions on supported devices. |
 | [App Data Sensors](#app-data_sensors) | None | Sensors that show how much data was sent or received by the app. |
+| `binary_sensor.app_lock` | [See Below](#app-lock-sensor) | Whether the companion app is currently locked. |
 | [App Importance Sensor](#app-importance-sensor) | None | The current importance of the app to determine if its in the foreground or cached. |
 | `sensor.app_memory` | [See Below](#app-memory-sensor) | Information about the memory that is available for the app. |
 | [App Usage Sensors](#app-usage-sensors) | None | Sensors that represent how the app is treated based on its usage. |
@@ -193,6 +194,17 @@ Possible states are:
 *   `service`
 *   `top_sleeping`
 *   `visible`
+
+
+## App Lock Sensor
+![Android](/assets/android.svg)
+This sensor indicates wether the companion app is currently locked. Has attributes indicating the app lock settings:
+
+| Attribute | Type | Description |
+|---------|---------|--------|
+| `app_lock_enabled` | boolean | Wether the biometric / screenlock is be enabled |
+| `app_lock_timeout` | integer | Session timeout in seconds |
+| `home_bypass_enabled` | boolean | Wether the lock is bypassed when connected to home WiFi |
 
 
 ## App Memory Sensor
